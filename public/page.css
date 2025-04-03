@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Iansui&family=Inter:ital,opsz,wght@0,14..32,200;1,14..32,200");
+
+html,
+body {
+  background: var(--color-base-100);
+  background: -moz-linear-gradient(
+    180deg,
+    var(--color-base-100) 0%,
+    var(--color-base-100) 75%,
+    var(--color-base-200) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    var(--color-base-100) 0%,
+    var(--color-base-100) 75%,
+    var(--color-base-200) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    var(--color-base-100) 0%,
+    var(--color-base-100) 75%,
+    var(--color-base-200) 100%
+  );
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: scroll;
+}
+
+.tooltip {
+  > :where(.tooltip-content),
+  &[data-tip]:before {
+    color: var(--color-base-content);
+  }
+
+  --tt-bg: var(--color-base-100);
+}
+
+.focused-page {
+  display: grid;
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-duration: 1.2s;
+}
+
+.navbar {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-duration: 0.8s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+    transform: translateY(-150%);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+* {
+  font-family: "Iansui", cursive;
+}
+
+.fancyfont {
+  font-family: "Rouge Script", cursive;
+}
+
+.title-font {
+  font-family: "Inter", sans-serif;
+}
+
+.spin-around {
+  animation: spinpar 6s linear infinite;
+}
+
+.spin-around * {
+  animation: spinchi 6s linear infinite;
+}
+
+@keyframes spinpar {
+  from {
+    transform: rotate(0deg) translate(var(--offset));
+  }
+  to {
+    transform: rotate(360deg) translate(var(--offset));
+  }
+}
+
+@keyframes spinchi {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
